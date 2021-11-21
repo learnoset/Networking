@@ -45,7 +45,6 @@ public class LearnosetNetRequest {
     public LearnosetNetRequest(Context context, int requestType) {
         this.context = context;
         this.progressDialog = null;
-        LearnosetNetRequest.url = url;
         this.requestMethod = requestType;
     }
 
@@ -89,7 +88,7 @@ public class LearnosetNetRequest {
         this.progressDialog = customDialog;
     }
 
-    public void execute(NetResponseListener networkResponse, boolean showProgressDialog, int resultCode) {
+    public void execute(boolean showProgressDialog, int resultCode, NetResponseListener networkResponse) {
 
         if (progressDialog == null) {
 

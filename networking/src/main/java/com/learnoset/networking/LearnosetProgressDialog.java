@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
-public class LearnosetProgressDialog extends Dialog {
+class LearnosetProgressDialog extends Dialog {
     public LearnosetProgressDialog(@NonNull Context context) {
         super(context);
     }
