@@ -1,7 +1,7 @@
 
 # Easiest way of Networking in Android Studio
 
-Learnoset Networking is a powerful library for any type networking in a Android Application
+Learnoset Networking is a powerful library for any type networking in Android Application.
 <br><br>
 You can make a internet request in just few lines of code. This library is a modified version of Volley library
 <br><br>
@@ -83,11 +83,6 @@ request.execute(true, 10, new NetResponseListener() {
 });
 ```
 
-<h5>execute() method parameters</h5>
-1. showDialog = true if you want to show process dialog, false otherwise<br>
-2. resultCode = If you want to use single NetResponseListener for more than 1 requests then in onRequestSuccess method resultCode will help you to identifies of which request you have recieved response<br>
-3. NetResponseListener instance to get response and errors after request success
-
 5. Make GET Request
 
 ```java
@@ -112,4 +107,16 @@ request.execute(true, 11, new NetResponseListener() {
         // handle errors here
     }
 });
+```
+
+<h5>execute() method parameters</h5>
+1. showDialog = true if you want to show process dialog, false otherwise<br>
+2. resultCode = If you want to use single NetResponseListener for more than 1 requests then in onRequestSuccess method resultCode will help you to identifies of which request you have recieved response<br>
+3. NetResponseListener instance to get response and errors after request success
+
+
+<h3>Use your Custom Dialog as Progress Dialog</h3>
+
+```java
+request.setCustomDialog(YourCustomDialogObject);
 ```
