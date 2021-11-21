@@ -29,7 +29,7 @@ You can make a internet request in just few lines of code. This library is a mod
 </ul>
 <br><br>
 <h3>How to use Learnoset Networking Library</h3>
-1. Add below line in your build.gradle file
+1. Add below line in your module level build.gradle file
 
 ```groovy
 implementation 'com.github.learnoset:networking:5.21.1'
@@ -37,8 +37,16 @@ implementation 'com.github.learnoset:networking:5.21.1'
 
 <br>
 
+2. Add below line in your project level build.gradle file
 
-2. Add Internet permissions in the Manifest file
+```groovy
+maven {url 'https://jitpack.io' }
+```
+
+<br>
+
+
+3. Add Internet permissions in the Manifest file
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
@@ -46,7 +54,7 @@ implementation 'com.github.learnoset:networking:5.21.1'
 
 <br>
 
-3. Initialize
+4. Initialize
 
 ```java
 LearnosetNetRequest.init("url_here", this);
@@ -54,7 +62,7 @@ LearnosetNetRequest.init("url_here", this);
 
 <br>
 
-4. Make POST Request
+5. Make POST Request
 
 ```java
 // creating object
@@ -83,7 +91,7 @@ request.execute(true, 10, new NetResponseListener() {
 });
 ```
 
-5. Make GET Request
+6. Make GET Request
 
 ```java
 // creating object
