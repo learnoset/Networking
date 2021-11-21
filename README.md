@@ -30,12 +30,55 @@ You can make a internet request in just few lines of code. This library is a mod
 <br><br>
 <h3>How to use Learnoset Networking Library</h3>
 1. Add below line in your build.gradle file
-<br>
 
 ```groovy
 implementation 'com.github.learnoset:networking:5.21.1'
 ```
-Do not forget to add internet permission in the Manifest file.
+
+<br>
+
+
+2. Add Internet permissions in the Manifest file
+
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
+```
+
+<br>
+
+3. Initialize
+
+```java
+LearnosetNetRequest.init("url_here", this);
+```
+
+<br>
+
+4. Make POST Request
+
+```java
+// creating object
+LearnosetNetRequest request = new LearnosetNetRequest(this, RequestMethod.POST);
+
+// adding post parameters
+request.addParam("param_1_key", "param_1_value");
+request.addParam("param_2_key", "param_2_value");
+request.addParam("param_3_key", "param_3_value");
+request.addParam("param_4_key", "param_4_value");
+request.addParam("param_5_key", "param_5_value");
+
+// execute request
+request.execute(false, 10, new NetResponseListener() {
+    @Override
+    public void onRequestSuccess(String response, Context context, int resultCode) {
+
+        // handle response here
+    }
+
+    @Override
+    public void onRequestFailed(String errorMessage, Context context, int resultCode) {
+
+        // handle errors here
+    }
+});
 ```
