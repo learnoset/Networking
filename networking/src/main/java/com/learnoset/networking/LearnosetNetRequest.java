@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public final class LearnosetNetRequest {
+public class LearnosetNetRequest {
 
     private static String url = "";
     private final Context context;

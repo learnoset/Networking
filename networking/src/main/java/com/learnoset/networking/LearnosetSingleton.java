@@ -8,7 +8,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
 @SuppressLint("StaticFieldLeak")
-final class LearnosetSingleton {
+class LearnosetSingleton {
     private static LearnosetSingleton instance;
     private static Context ctx;
     private RequestQueue requestQueue;
