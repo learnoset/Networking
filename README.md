@@ -82,3 +82,8 @@ request.execute(false, 10, new NetResponseListener() {
     }
 });
 ```
+
+<h5>execute() method parameters</h5>
+1. showDialog = true if you want to show process dialog, false otherwise
+2. resultCode = If you want to use single NetResponseListener for more than 1 requests then in onRequestSuccess method resultCode will help you to identifies of which request you have recieved response
+3. NetResponseListener instance to get response and errors after request success
