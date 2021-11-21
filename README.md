@@ -120,3 +120,9 @@ request.execute(true, 11, new NetResponseListener() {
 ```java
 request.setCustomDialog(YourCustomDialogObject);
 ```
+
+You can Visit our Website to learn more about Android App Development<br>
+[Learnoset Website](https://learnoset.com/)
+
+<br>
+We provide source code for Login & Register pages, Custom Dialogs, Custom Navigation Bar, Custom Toolbar, Custom Bottom Bar with material UI design and complete project files
