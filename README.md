@@ -68,7 +68,7 @@ request.addParam("param_4_key", "param_4_value");
 request.addParam("param_5_key", "param_5_value");
 
 // execute request
-request.execute(false, 10, new NetResponseListener() {
+request.execute(true, 10, new NetResponseListener() {
     @Override
     public void onRequestSuccess(String response, Context context, int resultCode) {
 
@@ -84,8 +84,32 @@ request.execute(false, 10, new NetResponseListener() {
 ```
 
 <h5>execute() method parameters</h5>
-1. showDialog = true if you want to show process dialog, false otherwise
-
-2. resultCode = If you want to use single NetResponseListener for more than 1 requests then in onRequestSuccess method resultCode will help you to identifies of which request you have recieved response
-
+1. showDialog = true if you want to show process dialog, false otherwise<br>
+2. resultCode = If you want to use single NetResponseListener for more than 1 requests then in onRequestSuccess method resultCode will help you to identifies of which request you have recieved response<br>
 3. NetResponseListener instance to get response and errors after request success
+
+5. Make GET Request
+
+```java
+// creating object
+LearnosetNetRequest request = new LearnosetNetRequest(this, RequestMethod.GET);
+
+// adding post parameters
+request.addParam("param_1_key", "param_1_value");
+request.addParam("param_2_key", "param_2_value");
+
+// execute request
+request.execute(true, 11, new NetResponseListener() {
+    @Override
+    public void onRequestSuccess(String response, Context context, int resultCode) {
+
+        // handle response here
+    }
+
+    @Override
+    public void onRequestFailed(String errorMessage, Context context, int resultCode) {
+
+        // handle errors here
+    }
+});
+```
