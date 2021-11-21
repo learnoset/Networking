@@ -102,15 +102,13 @@ public class LearnosetNetRequest {
     public void execute(boolean showProgressDialog, int resultCode, NetResponseListener networkResponse) {
 
         if (progressDialog == null) {
-
             progressDialog = new LearnosetProgressDialog(context);
             progressDialog.setCancelable(false);
             Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        }
 
-            if (showProgressDialog) {
-                progressDialog.show();
-            }
-
+        if (showProgressDialog) {
+            progressDialog.show();
         }
 
         if (url.isEmpty()) {
