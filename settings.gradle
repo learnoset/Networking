@@ -1,2 +1,3 @@
+include ':networking'
 include ':app'
 rootProject.name = "Networking"
