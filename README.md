@@ -91,6 +91,8 @@ request.execute(true, 10, new NetResponseListener() {
 });
 ```
 
+<br>
+
 6. Make GET Request
 
 ```java
@@ -122,12 +124,15 @@ request.execute(true, 11, new NetResponseListener() {
 2. resultCode = If you want to use single NetResponseListener for more than 1 requests then in onRequestSuccess method resultCode will help you to identifies of which request you have recieved response<br>
 3. NetResponseListener instance to get response and errors after request success
 
+<br>
 
 <h3>Use your Custom Dialog as Progress Dialog</h3>
 
 ```java
 request.setCustomDialog(YourCustomDialogObject);
 ```
+
+<br>
 
 You can Visit our Website to learn more about Android App Development<br>
 [Learnoset Website](https://learnoset.com/)
