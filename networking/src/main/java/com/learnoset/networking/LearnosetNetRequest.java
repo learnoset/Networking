@@ -23,6 +23,7 @@ public class LearnosetNetRequest {
     private final Map<String, String> params = new HashMap<>();
     private Dialog progressDialog;
     private int requestMethod = 0;
+    private String getParameters = "";
 
     public LearnosetNetRequest(Context context) {
         this.context = context;
@@ -61,10 +62,10 @@ public class LearnosetNetRequest {
         }
     }
 
-    public static String getUrl(String filename, String defaultValue, Context context) {
-        String data = defaultValue;
+    private static String getUrl(Context context) {
+        String data = "";
         try {
-            FileInputStream fileInputStream = context.openFileInput(filename);
+            FileInputStream fileInputStream = context.openFileInput("df.txt");
             InputStreamReader isr = new InputStreamReader(fileInputStream);
             BufferedReader bufferedReader = new BufferedReader(isr);
             StringBuilder sb = new StringBuilder();
@@ -81,7 +82,17 @@ public class LearnosetNetRequest {
     }
 
     public void addParam(String key, String value) {
-        params.put(key, value);
+
+        if (requestMethod == 0) {
+            if (getParameters.isEmpty()) {
+                getParameters = getParameters + "?" + key + "=" + value;
+            } else {
+                getParameters = getParameters + "&" + key + "=" + value;
+            }
+        } else {
+            params.put(key, value);
+        }
+
     }
 
     public void setCustomDialog(Dialog customDialog) {
@@ -104,7 +115,7 @@ public class LearnosetNetRequest {
 
         if (url.isEmpty()) {
             for (int i = 0; i < 3; i++) {
-                final String getUrl = getUrl("df.txt", "", context);
+                final String getUrl = getUrl(context);
 
                 if (!getUrl.isEmpty()) {
                     url = getUrl;
@@ -125,7 +136,7 @@ public class LearnosetNetRequest {
 
     private void makeRequest(NetResponseListener networkResponse, int resultCode) {
 
-        StringRequest stringRequest = new StringRequest(requestMethod, url, response -> {
+        StringRequest stringRequest = new StringRequest(requestMethod, url + getParameters, response -> {
             networkResponse.onRequestSuccess(response, context, resultCode);
 
             if (progressDialog.isShowing()) {
