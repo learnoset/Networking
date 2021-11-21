@@ -1,8 +1,11 @@
-<h1>Easiest way of Networking in Android Studio</h1>
+
+# Easiest way of Networking in Android Studio
+
 Learnoset Networking is a powerful library for any type networking in a Android Application
 <br><br>
 You can make a internet request in just few lines of code. This library is a modified version of Volley library
 <br><br>
+
 <h3>Why use Learnoset Networking Library</h3>
 <ul>
 <li>
@@ -28,4 +31,11 @@ You can make a internet request in just few lines of code. This library is a mod
 <h3>How to use Learnoset Networking Library</h3>
 1. Add below line in your build.gradle file
 <br>
-<p>implementation 'com.github.learnoset:networking:5.21.1'</p>
+
+```groovy
+implementation 'com.github.learnoset:networking:5.21.1'
+```
+Do not forget to add internet permission in the Manifest file.
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
